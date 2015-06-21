@@ -16,7 +16,8 @@ Obtained from
 
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-* format: The txt file contains a $180$ by $88$ table. Each row stores a record
+* format: The txt file contains a $180$ by $88$ table ($181$ row if the column
+names are counted). Each row stores a record
 of an activity (specified by the first entry) performed by a subject (specified
 by the second entry). Each remaining entry store the average of a variable in
 the original data set.  There are 86 variables in this tidy data set.
@@ -39,6 +40,10 @@ X is a feature (among the 561 features) with names that has the term *mean*
 and *std* in it.  The column names of tidy data set table will show this
 naming convention.
 
+* The dataset meets the Tidy requirement. That is, each variable you measured 
+is in 1 column. Also,  each different observation of that variable is stored
+in a different row
+
 * Data types of the 88 columns
 
 1. column 1  one of the following character strings: 
@@ -46,12 +51,12 @@ naming convention.
 "STANDING" or "LAYING"
 
 2. Column 2  an integer within the range 1 to 30 (including end points)
-3. Column 3 - Column 88:  real number
+3. Column 3 - Column 88:  real number 
 
 * Additional notes
 
-1. the unit for the last 86 data fields is the same as the original data set 
-(See appendix for further details)
+1. The Unit for each of the last 86 data fields is THE SAME AS the corresponding
+column in the origin data set (See appendix for further details)
 2. The measurement of the feature data are normalized and bounded between [-1,1]
 (stated in the README.txt file that came with the original dataset)
 3. A full description of the dataset and the experiments performed  can be found
@@ -71,8 +76,12 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 
 ## Appendix 
 
-From the {\tt features_info.txt} file that came with the original data set
+It is taken from the {\tt features_info.txt} file that came with the original data set
+It contains details on the meaning of the features, how some of the data are being
+collected and the values of the parameters related in the process and how some
+of the quantities are being calculated.
 
+### Excerpts from features_info,txt file
 
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
